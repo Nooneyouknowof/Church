@@ -1,0 +1,71 @@
+* {
+    opacity: 1;
+    margin: 0px;
+    padding: 0px;
+    /* scroll-behavior: smooth; */
+    transition: all 0.5s ease-in-out;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#bkg {
+    width: 100vw;
+    height: 80vh;
+    background: url(assets/backgrounds/church.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#platforms-array {
+    display: flex;
+}
+
+.platform-icon {
+    width: 3vw;
+}
+
+.platform-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 4vw;
+    height: 35vh;
+    margin-right: 0.5vw;
+    cursor: pointer;
+}
+
+.platform-item > h3 {
+    font-weight: bold;
+    user-select: none;
+}
+
+.platform-item-active {
+    width: 30%;
+    font-size: 1rem;
+    border-radius: 1rem !important;
+}
+
+.hide {
+    opacity: 0;
+    width: 0vw;
+}
+
+img.hide {
+    display: none;
+}
