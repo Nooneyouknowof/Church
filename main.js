@@ -1,5 +1,4 @@
 let verse = document.getElementById('quote');
-// https://labs.bible.org/api/?passage=random&type=json&callback=myCallback
 fetch('https://labs.bible.org/api/?passage=random&type=json')
 .then(response => {
     if (!response.ok) {
