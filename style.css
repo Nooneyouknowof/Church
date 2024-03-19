@@ -2,7 +2,7 @@
     opacity: 1;
     margin: 0px;
     padding: 0px;
-    /* scroll-behavior: smooth; */
+    scroll-behavior: smooth;
     transition: all 0.5s ease-in-out;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -22,10 +22,14 @@ footer {
     align-items: center;
 }
 
+#quote {
+    text-shadow: 0.25rem 0.25rem 1rem black;
+}
+
 #bkg {
     width: 100vw;
     height: 80vh;
-    background: url(assets/backgrounds/church.png);
+    background: url(assets/backgrounds/church2.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -34,6 +38,7 @@ footer {
 #platforms-array {
     display: flex;
 }
+
 
 .platform-icon {
     width: 3vw;
@@ -68,4 +73,11 @@ footer {
 
 img.hide {
     display: none;
+}
+
+.text-insta {
+    background: linear-gradient(to bottom right, violet, red);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
