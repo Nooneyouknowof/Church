@@ -16,14 +16,30 @@ body {
     overflow-x: hidden;
 }
 
-h1 {
+h1, strong {
     text-shadow: 0.2rem 0.15rem 0.1rem rgba(0, 0, 0, 0.25);
+}
+
+h5 {
+    text-shadow: 0.2rem 0.15rem 0.1rem rgba(0, 0, 0, 0.05);
+}
+
+img {
+    pointer-events: none;
+}
+
+iframe {
+    width: 100%;
 }
 
 footer {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#about-body {
+    background-color: lightgray;
 }
 
 #logo {
@@ -33,7 +49,15 @@ footer {
 }
 
 #quote {
-    text-shadow: 0.25rem 0.25rem 1rem black;
+    background-color: rgba(255, 255, 255, 0.5);
+    /* text-shadow: 0.25rem 0.25rem 1rem black; */
+    padding: 1.25vw;
+    display: flex;
+    backdrop-filter: blur(4px);
+    /* width: 100%; */
+    /* height: 100%; */
+    justify-content: center;
+    align-items: center;
 }
 
 #bkg {
@@ -43,15 +67,17 @@ footer {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    padding: 15vw;
 }
 
 #platforms-array {
     display: flex;
+    justify-content: center;
+    width: 50%;
 }
 
-
 .platform-icon {
-    width: 3vw;
+    width: 5vh;
 }
 
 .platform-item {
@@ -59,9 +85,9 @@ footer {
     justify-content: center;
     align-items: center;
     background-color: white;
-    width: 4vw;
+    width: 8vh;
     height: 35vh;
-    margin-right: 0.5vw;
+    margin: 0.25vw;
     cursor: pointer;
 }
 
@@ -71,7 +97,7 @@ footer {
 }
 
 .platform-item-active {
-    width: 30%;
+    width: 30vw;
     font-size: 1rem;
     border-radius: 1rem !important;
 }
@@ -90,4 +116,21 @@ img.hide {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.profile {
+    width: 20vw;
+    background-size: auto;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0.25rem 0.15rem 0.1rem rgba(0, 0, 0, 0.25));
+}
+
+.profile-text {
+    width: 20vw;
+    padding: 1vw;
+    text-align: center;
+}
+
+.hover:hover {
+    transform: scale(1.05);
 }
