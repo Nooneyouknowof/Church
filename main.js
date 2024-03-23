@@ -1,10 +1,3 @@
-// Made by:
-//   ____        __                _              __  ___        _  __                      __   __            
-//  / __ \ ____ / /_ ___ _ _  __  (_) ___        /  |/  / ____  / |/ / ___ _ __ __  ___ _  / /  / /_ ___   ___ 
-// / /_/ // __// __// _ `/| |/ / / / / _ \      / /|_/ / / __/ /    / / _ `// // / / _ `/ / _ \/ __// _ \ / _ \
-// \____/ \__/ \__/ \_,_/ |___/ /_/  \___/     /_/  /_/  \__/ /_/|_/  \_,_/ \_,_/  \_, / /_//_/\__/ \___//_//_/
-//                                                                               /___/                        
-
 let verse = document.getElementById('quote');
 fetch('https://labs.bible.org/api/?passage=random&type=json')
 .then(response => {
@@ -41,3 +34,11 @@ for(let i = 0; i < platform_elements.children.length; i++) {
 platform_elements.children[0].classList.add('platform-item-active');
 platform_elements.children[1].classList.add('platform-item-active');
 platform_elements.children[2].classList.add('platform-item-active');
+
+function login_btn() {
+    window.location.href = "admin.html";
+}
+
+function donate_btn() {
+    window.location.href = "assets/images/uridam.png";
+}
