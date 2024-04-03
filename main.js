@@ -7,7 +7,6 @@ fetch('https://labs.bible.org/api/?passage=random&type=json')
     return response.json();
 }).then(data => {
     data = data[0]
-    console.log(data)
     verse.innerHTML = `${data.text}<br><br>${data.bookname} ${data.chapter}:${data.verse}`
 })
 
@@ -42,3 +41,32 @@ function login_btn() {
 function donate_btn() {
     window.location.href = "assets/images/uridam.png";
 }
+
+let api = 'http://192.168.0.35:5000';
+let schedule = document.querySelector("#events > div")
+fetch(`${api}/schedule`)
+.then(response => response.json())
+.then(data => {
+    if (data.length == 0) {
+        schedule.innerHTML = `
+        <div class="px-5 py-4 mr-4 bg-danger text-light rounded shadow hover col-3 selected">
+            <div class="d-flex justify-content-between">
+                <h2>No Schedule</h2>
+            </div>
+            <div class="text-dark">Try again later, if issue persists please contact us</div>
+        </div>
+        `
+    }
+    data.map(item => {
+        time = Object.keys(item).join("");
+        item = item[time];
+        let event_div = document.createElement("div");
+        event_div.innerHTML = `<p>${new Date(time).toDateString()}</p><div class="d-flex justify-content-between"><h2>${item["title"]}</h2>
+        <h4>${item["duetime"].toUpperCase().replaceAll(" ", "")}</h4></div>`
+        event_div.classList.add("px-5", "py-4", "mr-4", "bg-light", "text-black", "rounded", "shadow", "hover", "col-3")
+        let description = document.createElement("div");
+        description.innerHTML = item["description"];
+        event_div.appendChild(description);
+        schedule.appendChild(event_div);
+    })
+})
