@@ -1,21 +1,9 @@
-import { useEffect, useState } from "react";
-
-export default () => {
-    const [data, setData] = useState([]);
-    const [loading, setLoading] = useState(true);
-
+import { useEffect } from "react";
+export default (props) => {
+    const {loading, data} = props.props
     useEffect(() => {
-        fetch("https://script.google.com/macros/s/AKfycbxQudTzhG5dOVVpVSgpVUro54GsK085XxiEkB5Z7TCZXCOood7i614NHjII5Kbq-enr/exec?endpoint=schedule") // Replace with your Apps Script URL
-        .then((res) => res.json())
-        .then((json) => {
-            setData(json);
-            setLoading(false);
-        })
-        .catch((err) => {
-            console.error("Failed to fetch data:", err);
-            setLoading(false);
-        });
-    }, []);
+        console.log(props);
+    }, [props]);
 
     const formatDate = (timestamp) => {
         return new Date(timestamp).toLocaleString();
